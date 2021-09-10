@@ -1,0 +1,31 @@
+topic: ~dialog()
+
+dynamic: object_list
+
+proposal: %MAIN_DIALOG
+    u1: (Qu'est ce que tu vois?) ^first["Je vois $visible_objects" "Je ne vois aucun objet"] ^stayInScope
+    u1: (Dis moi tout ce que tu vois) Ok, tu peux me dire d'arreter quand tu veux. ^enableThenGoto(CONTINUOUS_DESCRIPTION)
+    u1: (Regarde autour de toi) ^execute(lookAround) Je vois $saved_objects ^stayInScope
+    u1: (Cherche _[un une] _~object_list) D'accord, je cherche $1 $2 $pronoun=$1 $objectToFind=$2  ^execute(searchForObject, $2)
+    u1: (Aide) ^enableThenGoto(HELP)
+
+proposal: %OBJECT_FOUND %lookAtObjectFound J'ai trouvé $pronoun $objectToFind ici ^execute(sleep, 4000) %stopLookAtObjectFound ^enableThenGoto(MAIN_DIALOG)
+
+proposal: %OBJECT_NOT_FOUND Je ne trouve pas de $objectToFind autour de moi ^enableThenGoto(MAIN_DIALOG)
+
+proposal: %CONTINUOUS_DESCRIPTION
+    u1: (e:continuous_describe_objects) Je vois $continuous_describe_objects %continuous_describe_unlock ^stayInScope
+    u1: ([Stop Arrête]) Ok, j'arrête. ^enableThenGoto(MAIN_DIALOG)
+    u1: (Aide) ^enableThenGoto(HELP)
+
+
+proposal: %START Salut ! Je sais reconnaitre certains objets lorsque je les vois autour de moi. Demande moi ce que je vois. ^enableThenGoto(MAIN_DIALOG)
+
+concept:(help_answer)  ^rand[Oui "C'est ca" Exactement "Tu as tout compris" "Voila tu as compris"] ! ^rand["Ferme cette page d'aide" "Retourne sur la page principale" "Dis quitter"] et ^rand["demande moi cette phrase de nouveau." "dis moi la meme chose" "répette cette phrase"]
+
+proposal: %HELP Je peux décrire les objets que je vois autour de moi. Demande moi l'une des phrases suivantes
+    u1: (Qu'est ce que tu vois?) ~help_answer ^stayInScope
+    u1: (Dis moi tout ce que tu vois) ~help_answer ^stayInScope
+    u1: (Regarde autour de toi) ~help_answer ^stayInScope
+    u1: (Cherche _[un une] _~object_list) ~help_answer ^stayInScope
+    u1: (Quitter) ^enableThenGoto(MAIN_DIALOG)

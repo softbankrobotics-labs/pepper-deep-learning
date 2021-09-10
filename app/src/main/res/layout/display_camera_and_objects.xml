@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/camera"
+        android:contentDescription="@string/camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:onClick="helpButtonClicked"
+        android:text="@string/help"
+        android:textSize="24dp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/help_button" />
+
+</RelativeLayout>

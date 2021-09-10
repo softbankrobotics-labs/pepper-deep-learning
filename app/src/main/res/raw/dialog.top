@@ -1,0 +1,30 @@
+topic: ~dialog()
+
+dynamic: object_list
+
+proposal: %MAIN_DIALOG
+    u1: (What do you see?) ^first["I see $visible_objects" "I don't see any objects"] ^stayInScope
+    u1: (Tell me everything you see) Ok you can tell me to stop anytime. ^enableThenGoto(CONTINUOUS_DESCRIPTION)
+    u1: (Look around you) ^execute(lookAround) I see $saved_objects ^stayInScope
+    u1: (Search for _[a an] _~object_list) Ok, I search for $1 $2 $pronoun=$1 $objectToFind=$2  ^execute(searchForObject, $2)
+    u1: (Help) ^enableThenGoto(HELP)
+
+proposal: %OBJECT_FOUND %lookAtObjectFound I found $pronoun $objectToFind here ^execute(sleep, 4000) %stopLookAtObjectFound ^enableThenGoto(MAIN_DIALOG)
+
+proposal: %OBJECT_NOT_FOUND I don't find any $objectToFind around me ^enableThenGoto(MAIN_DIALOG)
+
+proposal: %CONTINUOUS_DESCRIPTION
+    u: (e:continuous_describe_objects) I see $continuous_describe_objects %continuous_describe_unlock ^stayInScope
+    u: (Stop) Okay, I stop. ^enableThenGoto(MAIN_DIALOG)
+    u1: (Help) ^enableThenGoto(HELP)
+
+proposal: %START Hello ! I can recognize certain objects when I see them around me. Ask me what I see. ^enableThenGoto(MAIN_DIALOG)
+
+concept:(help_answer)  ^rand[Yes "That's it" Exactly "You got it" ] ! ^rand["Close this help page" "Return to main page" "Say Quit"] and ^rand["ask me this sentence again" "repeat this sentence"]
+
+proposal: %HELP I can tell you what objects I see around me. Ask me one of the following sentences.
+    u1: (What do you see?) ~help_answer ^stayInScope
+    u1: (Tell me everything you see) ~help_answer ^stayInScope
+    u1: (Look around you) ~help_answer ^stayInScope
+    u1: (Search for _[a an] _~object_list) ~help_answer ^stayInScope
+    u1: (Quit) ^enableThenGoto(MAIN_DIALOG)

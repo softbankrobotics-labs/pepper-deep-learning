@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DeepPepper</string>
+    <string name="camera">Camera</string>
+
+    <string name="room_recording">Cette application utilise la caméra et le microphone</string>
+    <string name="permissions_needed">La caméra et le microphone sont requis. Veuillez autoriser cette application à les utiliser depuis les Paramètres.</string>
+    <string name="help_title">Aide</string>
+    <string name="help_quit">\"Quitter\"</string>
+    <string name="help_text">Je peux décrire les objets que je vois autour de moi. Demande moi l\'une des phrases suivantes:</string>
+    <string name="what_do_you_see">\"Qu\'est ce que tu vois?\"</string>
+    <string name="tell_me_everything_you_see">\"Dis moi tout ce que tu vois\"</string>
+    <string name="look_around_you">\"Regarde autour de toi\"</string>
+    <string name="search_for">\"Cherche un / une\"</string>
+    <string name="help_button">Aide</string>
+    <string name="help">\"Aide\"</string>
+
+</resources>

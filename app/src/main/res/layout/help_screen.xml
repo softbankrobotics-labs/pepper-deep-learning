@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/helpLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#44000000"
+        >
+        <TextView
+            android:id="@+id/helpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/dinroundpro"
+            android:text="@string/help_title"
+            android:textSize="@dimen/help_title_size"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textAllCaps="true"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+
+    <TextView
+        android:id="@+id/helpText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/dinroundpro"
+        android:text="@string/help_text"
+        android:textSize="@dimen/help_hint_size"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
+
+    <TextView
+        android:id="@+id/what_do_you_see"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dinroundpro"
+        android:text="@string/what_do_you_see"
+        android:textSize="@dimen/help_hint_size"
+        android:textColor="#fff"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/helpText"/>
+
+    <TextView
+        android:id="@+id/tell_me_everything_you_see"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dinroundpro"
+        android:text="@string/tell_me_everything_you_see"
+        android:textSize="@dimen/help_hint_size"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/what_do_you_see"/>
+
+    <TextView
+        android:id="@+id/look_around_you"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dinroundpro"
+        android:text="@string/look_around_you"
+        android:textSize="@dimen/help_hint_size"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tell_me_everything_you_see"/>
+
+    <TextView
+        android:id="@+id/search_for"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dinroundpro"
+        android:text="@string/search_for"
+        android:textSize="@dimen/help_hint_size"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/look_around_you"/>
+
+    <Spinner
+        android:id="@+id/word_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="@dimen/help_hint_size"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toEndOf="@+id/search_for"
+        app:layout_constraintTop_toBottomOf="@+id/look_around_you"
+        android:spinnerMode="dropdown"
+        />
+
+
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:layout_margin="32dp"
+        android:fontFamily="@font/dinroundpro"
+        android:textSize="@dimen/help_hint_size"
+        android:text="@string/help_quit"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_for"
+        android:onClick="quitHelpButtonClicked"
+        android:background="@drawable/help_button" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

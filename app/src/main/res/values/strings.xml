@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DeepPepper</string>
+    <string name="camera">Camera</string>
+
+    <string name="room_recording">This application is currently using the Camera and Microphone</string>
+    <string name="permissions_needed">Camera and Microphone permissions needed. Please allow in App Settings for additional functionality.</string>
+    <string name="help_title">Help</string>
+    <string name="help_quit">\"Quit\"</string>
+    <string name="help_text">I can describe the objects I see around me. Ask me one of the following sentences:</string>
+    <string name="what_do_you_see">\"What do you see?\"</string>
+    <string name="tell_me_everything_you_see">\"Tell me everything you see\"</string>
+    <string name="look_around_you">\"Look around you\"</string>
+    <string name="search_for">\"Search for\"</string>
+    <string name="help_button">Help</string>
+    <string name="help">\"Help\"</string>
+
+</resources>
