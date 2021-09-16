@@ -4,6 +4,10 @@
 This application demonstrates how the Pepper robot can recognize objects using deep learning algorithms.
 It comes with a pre-trained deep learning model that allows Pepper to recognize up to 80 different objects with its camera.
 
+# Video
+
+Please see the following video on YouTube for some more information about how this project works in practice: https://www.youtube.com/watch?v=93M1oY2VJfE
+
 ## 1. Hardware & software compatibility
 
 This app is compatible with Pepper, and [Naoqi 2.9.5](https://developer.softbankrobotics.com/blog/pepper-qisdk-os-295-release-note)
